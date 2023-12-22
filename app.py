@@ -17,8 +17,7 @@ from flask import Flask, jsonify
 #################################################
 
 # Create an engine for the chinook.sqlite database
-engine = create_engine("sqlite:///../Resources/hawaii.sqlite")
-
+engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 # reflect an existing database into a new model
 Base = automap_base()
 
@@ -49,11 +48,11 @@ def welcome():
     """List all available api routes."""
     return (
         f"Available Routes:<br/>"
-        f"/api/v1.0/station<br/>"
-        f"/api/v1.0/prcp<br/>"
-        f"api/v1.0/tobs<br/>"
-        f"api/v1.0/<start><br/>"
-        f"api/v1.0/<start>/<end><br/>"
+        f"<'/api/v1.0/prcp'>/api/v1.0/prcp<br/>"
+        f"<'/api/v1.0/station'>/api/v1.0/station<br/>"
+        f"<'/api/v1.0/tobs'>/api/v1.0/tobs<br/>"
+        f"<'/api/v1.0/<start'>/api/v1.0/<start><br/>"
+        f"<'/api/v1.0/<start>/<end'>/api/v1.0/<start>/<end><br/>"
     )
 
 
